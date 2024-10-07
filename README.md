@@ -3,7 +3,8 @@
 
 
 **Installing Django, DRF**
-  - pip install django djangorestframework djangorestframework-simplejwt
+  - pip install django djangorestframework djangorestframework-simplejwt django-celery-beat
+
 
 **Creating a project**
   - django-admin startproject library_project
