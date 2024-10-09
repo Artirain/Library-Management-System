@@ -11,9 +11,46 @@
 Использование JWT токенов для аутентификации.
 
 **Установка**
-1. Клонирование репозитория
+**1. Клонирование репозитория**
    
    ```
    git clone https://github.com/Artirain/Library-Management-System.git
    cd library_project
    ```
+**2. Настройка виртуального окружения**
+Рекомендуется использовать виртуальное окружение для изоляции зависимостей проекта.
+
+```
+   python3 -m venv venv
+   source venv/bin/activate  - для macOS/Linux
+   venv\Scripts\activate  - для Windows
+```
+
+**3. Установка зависимостей**
+Используйте файл requirements.txt для установки всех необходимых зависимостей:
+
+```
+   pip install -r requirements.txt
+```
+
+**5. Применение миграций**
+Примените миграции базы данных:
+
+```
+   python manage.py makemigrations
+   python manage.py migrate
+```
+
+**6. Создание суперпользователя**
+Чтобы иметь доступ к административной панели Django, создайте суперпользователя:
+
+```
+   python manage.py createsuperuser
+```
+
+**7. Запуск сервера разработки**
+Запустите сервер разработки:
+
+```
+   python manage.py runserver
+```
