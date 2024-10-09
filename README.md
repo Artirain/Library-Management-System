@@ -1,49 +1,19 @@
 # Library-Management-System
-**Test task "Library Management System".**
 
+**Описание**
+Этот проект представляет собой систему управления библиотекой, реализованную с использованием Django и Django Rest Framework (DRF). Пользователи могут регистрироваться, авторизоваться, управлять книгами и авторами, добавлять книги в избранное, удалять их из избранного и выполнять другие CRUD-операции с книгами и авторами. Также реализована JWT-аутентификация и периодические задачи с использованием Celery.
 
-**Installing Django, DRF**
-  - pip install django djangorestframework djangorestframework-simplejwt django-celery-beat
+**Функционал**
+Регистрация и аутентификация пользователей.
+Добавление, редактирование, удаление и просмотр книг и авторов.
+Добавление и удаление книг в списке избранных.
+Периодические задачи: отправка уведомлений о новых книгах и юбилейных изданиях.
+Использование JWT токенов для аутентификации.
 
-
-**Creating a project**
-  - django-admin startproject library_project
-  - cd library_project
-
-
-**Creating an application**
-  - python manage.py startapp library
-
-**Adding to settings.py**
-
-```
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-
-    'library',
-    'rest_framework',
-    'rest_framework_simplejwt',
-    'rest_framework_simplejwt.token_blacklist',
-]
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-}
-
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
-}
-```
+**Установка**
+1. Клонирование репозитория
+   
+   ```
+   git clone https://github.com/Artirain/Library-Management-System.git
+   cd library_project
+   ```
