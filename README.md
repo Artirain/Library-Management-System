@@ -53,3 +53,23 @@ python manage.py createsuperuser
 ```
 python manage.py runserver
 ```
+
+**Настройка Redis и Celery**  
+1. Убедитесь, что у вас установлен Redis.  
+2. Запустите Redis с помощью команды:  
+
+```
+redis-server
+```
+
+3. Для запуска Celery выполните следующую команду в отдельном терминале:
+
+```
+celery -A library_project worker -l info
+```
+
+4. Для запуска Celery Beat (для периодических задач) выполните следующую команду:  
+   
+```
+celery -A library_project beat -l info
+```
