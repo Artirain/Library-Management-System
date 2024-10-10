@@ -3,7 +3,11 @@ from django.contrib.auth import get_user_model
 from django.db import IntegrityError
 from .models import Author, Book, FavoriteBook
 
+
+
+
 User = get_user_model()
+
 
 class CustomUserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -22,15 +26,18 @@ class CustomUserSerializer(serializers.ModelSerializer):
         except IntegrityError:
             raise serializers.ValidationError({"username": ["Пользователь с таким именем уже существует."]})
 
+
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
         fields = ['id', 'first_name', 'last_name', 'biography', 'date_of_birth', 'date_of_death']
 
+
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         fields = ['id', 'title', 'summary', 'isbn', 'authors', 'publication_date', 'genre']
+
 
 class FavoriteBookSerializer(serializers.ModelSerializer):
     class Meta:
